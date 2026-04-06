@@ -1,0 +1,3 @@
+asqav[crewai]
+crewai
+python-dotenv
