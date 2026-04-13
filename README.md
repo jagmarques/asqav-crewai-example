@@ -32,13 +32,13 @@ Full trace of your multi-agent workflow. Every event hash-chained. If an agent m
 ## How it works
 
 ```python
-from asqav.integrations.crewai import AsqavCrewHook
+from asqav.extras.crewai import AsqavCrewHook
 
 hook = AsqavCrewHook()
 crew = Crew(agents=[...], tasks=[...])
 
-# One line - attach the hook
-crew.kickoff(hooks=[hook])
+# Attach the hook via callbacks
+crew.kickoff(step_callback=hook.on_step, task_callback=hook.on_task)
 ```
 
 Your crew runs exactly the same. You just get a tamper-evident record of everything that happened.

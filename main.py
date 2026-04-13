@@ -7,7 +7,7 @@ Run: python main.py
 import os
 from dotenv import load_dotenv
 from crewai import Agent, Task, Crew, Process
-from asqav.integrations.crewai import AsqavCrewHook
+from asqav.extras.crewai import AsqavCrewHook
 
 load_dotenv()
 
@@ -50,13 +50,12 @@ crew = Crew(
     verbose=True,
 )
 
-result = crew.kickoff(hooks=[hook])
+result = crew.kickoff(
+    step_callback=hook.on_step,
+    task_callback=hook.on_task,
+)
 
 print("
 --- Result ---")
 print(result)
 
-# Print audit summary
-print("
---- Audit Trail ---")
-hook.print_summary()
