@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="https://asqav.com"><img src="https://asqav.com/logo-text-white.png" alt="asqav" width="150"></a>
+</p>
+
 # asqav + CrewAI Example
 
 Add governance and audit trails to CrewAI multi-agent teams.
