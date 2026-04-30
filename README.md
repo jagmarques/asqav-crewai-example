@@ -21,7 +21,7 @@ import asqav
 asqav.init(api_key="sk_...", base_url="https://api.asqav.com", mode="hash-only")
 ```
 
-This is GDPR-aware data minimization by default for cloud deployments. See `docs/canonicalization.md` in the SDK repo for the canonicalization spec and conformance vectors.
+This is GDPR-aware data minimization by default for cloud deployments. See [docs/fingerprint-spec.md](https://github.com/jagmarques/asqav-sdk/blob/main/docs/fingerprint-spec.md) in the SDK repo for the fingerprint spec and conformance vectors.
 
 ## What this does
 
@@ -48,7 +48,7 @@ python main.py
 [asqav] Crew finished: 5 events across 2 agents, chain integrity: valid
 ```
 
-Full trace of your multi-agent workflow. Every event hash-chained. If an agent misbehaves or results get tampered with, the audit trail shows it.
+Full trace of your multi-agent workflow. Every event linked to the previous one. If an agent misbehaves or results get tampered with, the audit trail shows it.
 
 ## How it works
 
@@ -62,7 +62,7 @@ crew = Crew(agents=[...], tasks=[...])
 crew.kickoff(step_callback=hook.on_step, task_callback=hook.on_task)
 ```
 
-Your crew runs exactly the same. You just get a tamper-evident record of everything that happened.
+Your crew runs exactly the same. You just get a verifiable record of everything that happened.
 
 ## Requirements
 
